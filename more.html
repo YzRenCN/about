@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nor · 工具导航</title>
+<style>
+:root {
+    --primary: #3b4cca;
+    --primary-hover: #2a38a8;
+    --primary-light: #e8e8ff;
+    --primary-border: #c5caf0;
+    --border: #e0e0e0;
+    --bg: #f5f6f8;
+    --text: #1a202c;
+    --text-secondary: #4a5568;
+    --muted: #718096;
+    --paper: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+    min-height: 100%;
+    font-family: "Segoe UI", -apple-system, "Microsoft YaHei", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 24px;
+}
+
+/* 纵向一列 */
+.tools-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 520px;
+}
+
+/* 单个工具链接 */
+.tool-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.tool-link:hover {
+    border-color: var(--primary-border);
+    box-shadow: 0 8px 24px rgba(59, 76, 202, 0.12);
+    transform: translateX(6px);
+}
+
+.tool-link:active {
+    transform: translateX(2px);
+}
+
+/* 图标 */
+.tool-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+}
+
+.tool-link:hover .tool-icon {
+    transform: scale(1.08);
+}
+
+/* 文字区域 */
+.tool-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.tool-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+}
+
+.tool-en {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    line-height: 1.3;
+}
+
+/* 箭头 */
+.tool-arrow {
+    font-size: 16px;
+    color: var(--muted);
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.tool-link:hover .tool-arrow {
+    color: var(--primary);
+    transform: translateX(4px);
+}
+
+/* 各工具图标颜色 */
+.icon-txt     { background: #e6f0fa; }
+.icon-draw    { background: #ffe5e7; }
+.icon-map     { background: #dff5f2; }
+.icon-word    { background: #e8e8ff; }
+.icon-diary   { background: #f3e5fa; }
+.icon-ppt     { background: #fdeae4; }
+.icon-sheet   { background: #e8f7ee; }
+.icon-html    { background: #fff3e0; }
+.icon-search  { background: #e0f2fe; }
+.icon-sitemap { background: #f0f9ff; }
+
+@media (max-width: 768px) {
+    body { padding: 24px 16px; }
+
+    .tool-link { padding: 14px 16px; gap: 12px; }
+
+    .tool-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        border-radius: 10px;
+    }
+
+    .tool-name { font-size: 14px; }
+    .tool-en { font-size: 10.5px; }
+}
+</style>
+</head>
+<body>
+
+<div class="tools-column">
+
+    <a href="https://arts.nor.asia/txt" class="tool-link">
+        <div class="tool-icon icon-txt">📝</div>
+        <div class="tool-info">
+            <div class="tool-name">TXT 编辑器</div>
+            <div class="tool-en">Text Editor</div>
+        </div>
+        <div class="tool-arrow">→</div>
+    </a>
+
+    <a href="https://arts.nor.asia/draw" class="tool-link">
+        <div class="tool-icon icon-draw">🎨</div>
+        <div class="tool-info">
+            <div class="tool-name">在线绘图板</div>
+            <div class="tool-en">Drawing Board</div>
+        </div>
+        <div class="tool-arrow">→</div>
+    </a>
+
+    <a href="https://norws.nor.asia/" class="tool-link">
+        <div class="tool-icon icon-map">🗺️</div>
+        <div class="tool-info">
+            <div class="tool-name">多地图工具</div>
+            <div class="tool-en">Maps</div>
+        </div>
+        <div class="tool-arrow">→</div>
+    </a>
+
+    <a href="https://nortbook.nor.asia/w" class="tool-link">
+        <div class="tool-icon icon-word">📄</div>
+        <div class="tool-info">
+            <div class="tool-name">Nortbook Word</div>
+            <div class="tool-en">Word</div>
+        </div>
+        <div class="tool-arrow">→</div>
+    </a>
+
+    <a href="https://nortbook.nor.asia/nortbook" class="tool-link">
+        <div class="tool-icon icon-diary">📔</div>
+        <div class="tool-info">
+            <div class="tool-name">Nortbook 日记</div>
+            <div class="tool-en">Diary</div>
+        </div>
+        <div class="tool-arrow">→</div>
+    </a>
+
+    <a href="https://nortbook.nor.asia/p" class="tool-link">
+        <div class="tool-icon icon-ppt">📊</div>
+        <div class="tool-info">
+            <div class="tool-name">演示文稿</div>
+            <div class="tool-en">Presentation</div>
+        </div>
+        <div class="tool-arrow">→</div>
+    </a>
+
+    <a href="https://nortbook.nor.asia/e" class="tool-link">
+        <div class="tool-icon icon-sheet">📈</div>
+        <div class="tool-info">
+            <div class="tool-name">电子表格</div>
+            <div class="tool-en">Spreadsheet</div>
+        </div>
+        <div class="tool-arrow">→</div>
+    </a>
+
+    <a href="https://tools.nor.asia/h" class="tool-link">
+        <div class="tool-icon icon-html">💻</div>
+        <div class="tool-info">
+            <div class="tool-name">HTML 编辑器</div>
+            <div class="tool-en">HTML Editor</div>
+        </div>
+        <div class="tool-arrow">→</div>
+    </a>
+
+    <a href="https://tools.nor.asia/s" class="tool-link">
+        <div class="tool-icon icon-search">🔍</div>
+        <div class="tool-info">
+            <div class="tool-name">聚合搜索</div>
+            <div class="tool-en">Search</div>
+        </div>
+        <div class="tool-arrow">→</div>
+    </a>
+
+    <a href="https://tools.nor.asia/w" class="tool-link">
+        <div class="tool-icon icon-sitemap">🌐</div>
+        <div class="tool-info">
+            <div class="tool-name">网站地图</div>
+            <div class="tool-en">Sitemap</div>
+        </div>
+        <div class="tool-arrow">→</div>
+    </a>
+
+</div>
+
+</body>
+</html>
